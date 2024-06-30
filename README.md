@@ -135,7 +135,7 @@ Helper function are simple and small check their implementation.
 </div>
 ```
 
-In the example provided, `this` is referencing the child element. To call a function belonging to a parent, you need to leave the sub-context by going one level higher in the DOM hierarchy. Alternatively, the parent function can be called using the syntax `() => this.c('parent').fn.childDidChange(this)`.
+In the example provided, `this` is referencing the child component. To call a function belonging to a parent, you need to leave the child context by going one level higher in the DOM hierarchy. Alternatively, the parent function can be called using the syntax `() => this.c('parent').fn.childDidChange(this)`.
 
 ## Examples
 
