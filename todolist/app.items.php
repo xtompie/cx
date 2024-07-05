@@ -11,14 +11,14 @@ app.items = (function() {
     function add(text) {
         let c = this.c();
         append(c, text, false);
-        this.emmit('onchange', value(c));
+        this.em.onchange(value(c));
     }
     function change() {
-        this.emmit('onchange', value(this));
+        this.em.onchange(value(this));
     }
     function remove(item) {
         item.remove();
-        this.emmit('onchange', value(this));
+        this.em.onchange(value(this));
     }
     function value(c) {
         return c.allc('app.item').map(item => item.fn.value());

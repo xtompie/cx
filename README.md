@@ -101,7 +101,7 @@ Components are capable of emitting a callback. The callback must be a function.
 const counter = (function() {
     function increment() {
         // ...
-        this.emmit('onchange', 42)
+        this.em.onchange(42)
     }
     // ...
 })();

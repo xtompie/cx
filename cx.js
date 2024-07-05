@@ -2,13 +2,13 @@ document.all = function(s) {
     return Array.from(document.querySelectorAll(s));
 };
 document.allc = function(n) {
-    return Array.from(document.querySelectorAll(`[component="${n}"]`));
+    return document.all(`[component="${n}"]`);
 };
 document.one = function(s) {
     return document.querySelector(s);
 };
 document.onec = function(n) {
-    return document.querySelector(`[component="${n}"]`);
+    return document.one(`[component="${n}"]`);
 };
 Array.prototype.each = function(f) {
     return this.forEach(f);
@@ -62,6 +62,18 @@ HTMLElement.prototype.up = function(s) {
 HTMLElement.prototype.upc = function(name) {
     return this.matches(`[component="${name}"]`) ? this : this.closest(`[component="${name}"]`);
 }
+Object.defineProperty(HTMLElement.prototype, 'em', {
+    get: function() {
+        if (!this._em) {
+            this._em = new Proxy(this, {
+                get: function(target, name) {
+                    return (...args) => target.emmit(name, ...args);
+                }
+            });
+        }
+        return this._em;
+    }
+});
 Object.defineProperty(HTMLElement.prototype, 'fn', {
     get: function() {
         if (!this._fn) {

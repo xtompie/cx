@@ -6,7 +6,7 @@ const counter = (function() {
     }
     function set(value) {
         this.c().one('[counter-value]').textContent = value;
-        this.emmit('onchange', value);
+        this.em.onchange(value);
     }
     function increment() {
         this.fn.set(this.fn.get() + 1);

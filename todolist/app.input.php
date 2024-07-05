@@ -9,7 +9,7 @@ app.input = (function(){
         let input = this.c().one('[app-input-text]');
         let text = input.value;
         input.value = '';
-        this.emmit('onadd', text);
+        this.em.onadd(text);
     }
     return {
         init,

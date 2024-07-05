@@ -17,7 +17,7 @@ app.item = (function(){
     function check() {
         let c = this.c();
         c.attr('app-item-status', c.one('[app-item-checkbox]').checked ? 'done' : '');
-        this.emmit('onchange', this.fn.value());
+        this.em.onchange(this.fn.value());
     }
     function value() {
         let c = this.c();
@@ -27,7 +27,7 @@ app.item = (function(){
         };
     }
     function remove() {
-        this.emmit('onremove', this.c());
+        this.em.onremove(this.c());
     }
     return {
         init,
