@@ -10,7 +10,7 @@
     <h1 val="() => ({title: this.textContent})">Ticket #123</h1>
     <div>
         Author:
-        <span val="() => ({author: val.obj(this)})">
+        <span val="() => ({author: this.c('val').})">
             <span val="() => ({name: this.textContent})">John Doe</span>
             (<span val="() => ({email: this.textContent})">j.doe@example.com</span>)
         </span>
